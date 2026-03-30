@@ -1,0 +1,69 @@
+1. valid data types:
+		
+		 a. text / string:     "name":"Prashant"
+		 b. number:            "age": 28
+		 c. null:              "fee":null
+		 d. boolean:           "Salesforce":true
+		 e. object:            {"name":"Prashant","age": 28,"fee":null, "Salesforce":true}
+		 f. array:             ["Salesforce","LWC","JSON","javascript"]
+		                       [12,23,45,67,89]
+							   ['Salesforce','LWC']   //invalid
+		
+		    {"name":"Prashant","age": 28,"fee":null, "Salesforce":true,"course":["Salesforce","LWC","JSON","javascript"],"number":[12,23,45,67,89]}
+			
+			[["Salesforce","LWC","JSON","javascript"],[12,23,45,67,89] ]
+			[{"name":"Prashant","age": 28,"fee":null, "Salesforce":true},{"name":"Prashant Veer","age": 30,"fee":null, "Java":false}]
+			
+	
+	    2. invalid data types in JSON:
+		
+		 a. undefined
+		 b. date
+		 c. function
+			
+const obj = '{"name":"Prashant"}';
+console.log('@@@ JS object :',JSON.parse(obj));
+
+
+const cmpobj ='{"name":"Prashant","age": 28,"fee":null, "Salesforce":true}';
+console.log('@@@ JS obj: ',JSON.parse(cmpobj));
+
+//array
+const arr ='["Salesforce","LWC","JSON","javascript"]';
+console.log('@@@ ',JSON.parse(arr));
+
+const arr1 ='[12,23,45,67,89]';
+console.log('@@@ ',JSON.parse(arr1));
+
+/* invalid example:
+const arr2 ='['Salesforce','LWC']';
+console.log('@@@ ',JSON.parse(arr2));*/
+
+const obj2 ='{"name":"Prashant","age": 28,"fee":null, "Salesforce":true,"course":["Salesforce","LWC","JSON","javascript"],"number":[12,23,45,67,89]}';
+console.log('@@@ ',JSON.parse(obj2));
+
+
+/*invalid example:
+
+const obj1 ='{"name":"Prashant","age": 28,"fee":null, "Salesforce":true,["Salesforce","LWC","JSON","javascript"],[12,23,45,67,89]}';
+console.log('@@@ ',JSON.parse(obj1));
+
+SyntaxError: Expected double-quoted property name in JSON
+*/
+
+const obj2 ='{"name":"Prashant","age": 28,"fee":null, "Salesforce":true,"course":["Salesforce","LWC","JSON","javascript"],"number":[12,23,45,67,89]}';
+const data = JSON.parse(obj2)
+console.log('@@@ ',data);
+console.log('@@@ ',data.course[1]);
+
+
+//nested array
+const nestedarr ='[["Salesforce","LWC","JSON","javascript"],[12,23,45,67,89]]';
+console.log('@@@ ',JSON.parse(nestedarr));
+
+
+const obj1 ='[{"name":"Prashant","age": 28,"fee":null, "Salesforce":true}]';
+console.log('@@@ ',JSON.parse(obj1));
+
+const obj3 = '[{"name":"Prashant","age": 28,"fee":null, "Salesforce":true},{"name":"Prashant Veer","age": 30,"fee":null, "Java":false}]';
+console.log('@@@ ',JSON.parse(obj3));
