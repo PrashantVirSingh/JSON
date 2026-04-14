@@ -1,0 +1,53 @@
+1. Date object:
+
+const txt = '{"name":"Veer", "Course":"JSON", "duration":30, "birth":"April 14,2026"}';
+
+const dt = JSON.parse(txt);
+
+console.log('@@@ ',dt);
+
+dtp = new Date(dt.birth);
+
+console.log('@@@ date: ',dtp);
+
+dtd = new Date(dt.duration);
+
+console.log('@@@ duration: ',dtd);
+
+console.log('@@@ -ve: ' , new Date(-1000));
+
+console.log('@@@ ', new Date(dt.name));    //invalid Date
+
+2. reviver function:
+
+Example 01:
+const jsonstring ='{"name":"Veer","date":"2026-04-14"}';
+
+const reviverObj = JSON.parse(jsonstring, (key, value)=>{
+
+    if(key ==='date'){
+        return new Date(value);
+    }else{
+        return value;
+    }
+} );
+
+console.log('@@@ reviverObj ',reviverObj.date);
+
+
+Example 02:
+const jsonstring ='{"name":"Veer","date":"2026-04-24","age":12}';
+
+const reviverObj = JSON.parse(jsonstring, (key, value)=>{
+
+    if(typeof value==='string' && value.match(/^\d{4}-\d{2}-\d{2}$/)){
+      return new Date(value);  
+    }else if(key ==='date'){
+        //return new Date(value);
+        console.log('@@@');
+    }else{
+        return value;
+    }
+} );
+
+console.log('@@@ reviverObj ',reviverObj.date);
