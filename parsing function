@@ -1,0 +1,21 @@
+
+
+const txt = '{"name":"Veer", "age":12}';
+const rst = JSON.parse(txt);
+console.log('@@@ result: ',rst);
+
+const fntxt = '{"name":"Veer", "age":12, "action":"function(){return 30;}"}';
+const fnrst = JSON.parse(fntxt);
+console.log('@@@ result: ',fnrst);
+console.log('@@@ rstfn: ',fnrst.action);
+const str = fnrst.action;
+const fnparsing = eval('('+str+')');
+console.log('@@@ fnparsing: ',fnparsing());
+
+const fnctxt = '{"name":"Veer", "age":12, "action":"function(){return 30;console.log(\\"hello\\");}"}';
+const fncrst = JSON.parse(fnctxt);
+console.log('@@@ result: ',fncrst);
+console.log('@@@ rstfn: ',fncrst.action);
+const strc = fncrst.action;
+const fncparsing = eval('('+strc+')');
+console.log('@@@ fnparsing: ',fncparsing());
