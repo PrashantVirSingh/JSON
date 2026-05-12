@@ -1,0 +1,24 @@
+const jsObj = {name:"Veer", Course:"JSON", Day:06};
+
+const txt = JSON.stringify(jsObj);
+
+console.log('@@@ :',txt);
+
+const arr = ["Salesforce","LWC","JSON","Apex"];
+
+const arrtxt = JSON.stringify(arr);
+
+console.log('@@@ :',arrtxt);
+
+const arrun = ["Salesforce","LWC","JSON","Apex",undefined,24,function(){},{a:10}];
+const arrtxtun = JSON.stringify(arrun);
+console.log('@@@ :',arrtxtun);
+
+
+const obj = {name:"Veer", Course:"JSON"};
+const jobj = JSON.stringify(obj);
+console.log('@@@ :',jobj);
+
+const objin = {name:"Veer", Course:"JSON",fees:undefined, fn:function(){}};
+const jobjin = JSON.stringify(objin);
+console.log('@@@ : ',jobjin);
