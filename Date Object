@@ -1,0 +1,54 @@
+const jsObj = {birth: new Date("2026-9-08")};
+const jsonOb = JSON.stringify(jsObj);
+console.log('@@@ : ',jsonOb );
+//output:
+@@@ :  {"birth":"2026-09-08T00:00:00.000Z"}
+
+const jsObj1 = {birth: new Date()};
+const jsonOb1 = JSON.stringify(jsObj1);
+console.log('@@@ : ',jsonOb1);
+//output:
+@@@ :  {"birth":"2026-05-27T06:36:10.440Z"}
+
+const dt = new Date();
+console.log('@@@ year: ',dt.getFullYear());
+//output:
+@@@ year:  2026
+
+const dt1 = new Date("2020-9-08");
+console.log('@@@ year: ',dt1.getFullYear());
+//output:
+@@@ year:  2020
+
+const jsObj2 = {birth: new Date()};
+const jsonOb2 = JSON.stringify(jsObj2.birth.getFullYear());
+console.log('@@@ : ',jsonOb2);
+//output:
+@@@ :  2026
+
+let dtm = new Date();
+let month = dtm.getMonth();
+console.log('@@@ : ',month);
+//output:
+@@@ :  4
+
+let dtm1 = new Date();
+let month1 = dtm1.getMonth()+1;
+console.log('@@@ : ',month1);
+//output:
+@@@ :  5
+
+let dtms = new Date("2020-11-08");
+let months = dtms.getMonth();
+console.log('@@@ : ',months);
+//output:
+@@@ :  10
+
+const mn = ["JAN","FEB","MARCH","APRIL","MAY","JUNE"];
+const dmn =  new Date();
+let mnts = mn[dmn.getMonth()];
+console.log('@@@: ',mnts);
+//output:
+@@@:  MAY
+
+
