@@ -1,0 +1,28 @@
+const jsObj = {name:"Veer", course:"JSON", class: 09, birth: new Date("1999-01-01")};
+const jsonObj = JSON.stringify(jsObj);
+console.log('@@@: ',jsonObj);
+//output:
+@@@:  {"name":"Veer","course":"JSON","class":9,"birth":"1999-01-01T00:00:00.000Z"}
+
+
+const jsObj2 = {name:"Veer", course:"JSON", class: 09, birth: new Date()};
+
+const jsonObj2 = JSON.stringify(jsObj2);
+console.log('@@@: ',jsonObj2);
+//output:
+@@@:  {"name":"Veer","course":"JSON","class":9,"birth":"2026-05-27T05:19:38.567Z"}
+
+
+const injsObj = {name:"Veer", course:"JSON", class: 09, birth: 1999-01-01};
+
+const injsonObj = JSON.stringify(injsObj);
+console.log('@@@: ',injsonObj);
+//output:
+@@@:  {"name":"Veer","course":"JSON","class":9,"birth":1997}
+
+
+const indjsObj = {name:"Veer", course:"JSON", class: 09, birth: "1999-01-01"};
+const indjsonObj = JSON.stringify(indjsObj);
+console.log('@@@: ',indjsonObj);
+//output:
+@@@:  {"name":"Veer","course":"JSON","class":9,"birth":"1999-01-01"}
