@@ -1,0 +1,18 @@
+e.g. 01:
+const obj ={name:"Veer",age:function(){return 30;},city:"San Jose"};
+
+console.log('@@@ javascript obj: ',obj);
+
+console.log('@@@ stringify: ',JSON.stringify(obj));		
+
+
+e.g. 02:
+const obj ={name:"Veer",age:function(){return 30;},city:"San Jose"};
+
+console.log('@@@ javascript obj: ',obj);
+
+obj.age=obj.age.toString();
+
+const str = JSON.stringify(obj);
+
+console.log('@@@ str: ',str);
