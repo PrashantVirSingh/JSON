@@ -1,0 +1,50 @@
+//fetch properties
+e.g. 01:
+const obj = '{"name":"Veer","age":30,"course":"Salesforce"}';
+
+const txt = JSON.parse(obj);
+
+console.log('@@@ parsing done: ',txt);
+
+let printval =" ";
+for(const x in txt){
+
+    console.log('@@@ x: ',x);
+    printval+=x+" , ";
+    console.log('@@@ printval: ',printval);
+    
+}
+
+e.g. 02:
+const obj = '{"name":"Veer","age":30,"course":"Salesforce","cars":["Tata","Toyata"]}';
+
+const txt = JSON.parse(obj);
+
+console.log('@@@ parsing done: ',txt);
+
+let printval =" ";
+for(const x in txt){
+
+    console.log('@@@ x: ',x);
+    printval+=x+" , ";
+    console.log('@@@ printval: ',printval);
+    
+}
+
+
+
+							//fetch values
+const obj = '{"name":"Veer","age":30,"course":"Salesforce","cars":["Tata","Toyata"]}';
+
+const txt = JSON.parse(obj);
+
+console.log('@@@ parsing done: ',txt);
+
+let printval =" ";
+for(const x in txt){
+
+    console.log('@@@ x: ',x);
+    printval+=txt[x]+" , ";
+    console.log('@@@ printval: ',printval);
+    
+}
