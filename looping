@@ -48,3 +48,56 @@ for(const x in txt){
     console.log('@@@ printval: ',printval);
     
 }
+
+
+//fetch values
+
+E.g. 01:
+
+const obj ='{"name":"Veer", "age":23}';
+
+const jo = JSON.parse(obj);
+
+console.log('@@@ complete javascript obj: ',jo);
+
+console.log('@@@ name: ',jo.name);
+
+console.log('@@@ name with []: ',jo['name']);
+
+console.log('@@@ age: ',jo.age);
+
+for(const x in jo){
+
+    console.log('@@@ x: ',x);
+
+    console.log('@@@ values: ',jo.x);   //undefined 
+
+    console.log('@@@ 2nd approach values: ',jo[x]);   
+
+}
+
+
+E.g. 02:
+
+const obj ='{"name":"Veer", "age":23, "cars":["TATA", "TOYATA"]}';
+
+const jo = JSON.parse(obj);
+
+console.log('@@@ complete javascript obj: ',jo);
+
+console.log('@@@ name: ',jo.name);
+
+console.log('@@@ name with []: ',jo['name']);
+
+console.log('@@@ age: ',jo.age);
+
+for(const x in jo){
+
+    console.log('@@@ x: ',x);
+
+    console.log('@@@ values 19: ',jo.x);   //undefined 
+
+    console.log('@@@ 2nd approach values: ',jo[x]);   
+
+}
+
