@@ -83,4 +83,45 @@ string out= JSON.serialize(st,true);
 system.debug('@@@ out: '+out);
 
 
+//serializePretty()
+e.g. 07: 
+public class student {
+    
+    public string firstName{set;get;}
+    public string lastName{set;get;}
+    public string course{set;get;}
+    public Decimal fees{set;get;}
+}			
+			
+			
+			
+			
+student st = new student();
+st.firstName='Veer';
+st.lastName='Developer';
+st.course='JSON';
+st.fees = 0;
+//string out= JSON.serialize(st);
+string out = JSON.serializePretty(st);
+system.debug('@@@ out: '+out);
 
+
+//JSON.serializePretty(Object objectToSerialize, Boolean suppressApexObjectNulls)
+public class student {
+    
+    public string firstName{set;get;}
+    public string lastName{set;get;}
+    public string course{set;get;}
+    public Decimal fees{set;get;}
+}
+
+
+
+student st = new student();
+st.firstName='Veer';
+st.lastName='Developer';
+st.course='JSON';
+//st.fees = 0;
+//string out= JSON.serialize(st);
+string out = JSON.serializePretty(st,true);
+system.debug('@@@ out: '+out);
