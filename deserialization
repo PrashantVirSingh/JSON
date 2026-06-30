@@ -1,0 +1,40 @@
+E.g. 01:
+Account acc = new Account();
+acc=[select Id, Name, Description from Account Limit 1];
+system.debug('@@@ acc: '+acc);
+
+
+//serialization
+string outacc = JSON.serialize(acc);
+system.debug('@@@ outacc: '+outacc);
+
+//deserialization
+Account desacc = (Account)JSON.deserialize(outacc,Account.class);
+system.debug('@@@ desacc: '+desacc);
+
+
+Account desacct = (Account)JSON.deserialize('{"attributes":{"type":"Account","url":"/services/data/v67.0/sobjects/Account/001Ig00000BmCudIAF"},"Id":"001Ig00000BmCudIAF","Name":"account created after from Constructor","RecordTypeId":"0122w000000JODMAA4"}',Account.class);
+system.debug('@@@ desacct: '+desacct);
+
+
+E.g. 03:
+public class student {
+    
+    public string firstName{set;get;}
+    public string lastName{set;get;}
+    public string course{set;get;}
+    public Decimal fees{set;get;}
+}
+
+=======Anonymous========
+
+student st = new student();
+st.firstName='Veer';
+st.lastName='Developer';
+st.course='JSON';
+st.fees = 0;
+string out= JSON.serializePretty(st);
+system.debug('@@@ out: '+out);
+//deserialization
+Student std = (Student)JSON.deserialize(out,Student.class);
+system.debug('@@@ std: '+std);
