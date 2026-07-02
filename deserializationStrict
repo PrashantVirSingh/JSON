@@ -1,0 +1,47 @@
+public class deserializeexample {
+
+    
+    public static void compare_normaldeserialize(){
+        
+        student st = new student();
+        st.course='JSON';
+        st.fees=0;
+        st.firstName='Veer';
+        st.lastName='the developer';
+        
+        string st1 = JSON.serialize(st);
+        system.debug('@@@ st1: '+st1);
+        
+        //deserialize
+        Student st2 = (Student)JSON.deserialize(st1,Student.class);
+        system.debug('@@@ st2: '+st2);
+        
+         string validJSON = '{"lastName":"the developer","firstName":"Veer","fees":0,"course":"JSON"}';
+        Student st3 = (Student)JSON.deserialize(validJSON,Student.class);
+        system.debug('@@@ st3: '+st3);
+        
+        string invalidJSON = '{"lastName":"the developer","firstName":"Veer","fees":0,"course":"JSON","duration":"1month"}';
+        Student st4 = (Student)JSON.deserialize(invalidJSON,Student.class);
+        system.debug('@@@ st4: '+st4);
+        
+    }
+    
+    
+    public static void compare_normaldeserializeStrict(){
+        
+        string validJSON = '{"lastName":"the developer","firstName":"Veer","fees":0,"course":"JSON"}';
+        Student st5 = (Student)JSON.deserializeStrict(validJSON,Student.class);
+        system.debug('@@@ st5: '+st5);
+        
+        string invalidJSON = '{"lastName":"the developer","firstName":"Veer","fees":0,"course":"JSON","duration":"1month"}';
+        Student st6 = (Student)JSON.deserializeStrict(invalidJSON,Student.class);
+        system.debug('@@@ st6: '+st6);
+    }
+}
+
+
+===========Anonymous code==============
+
+deserializeexample.compare_normaldeserialize();
+
+deserializeexample.compare_normaldeserializeStrict();
